@@ -42,8 +42,7 @@ if(@patientLiteArray>1){
         $volueDescription =~ s/[\";]//g;
         $volueDescription =~ s/[\s]/_/g;
         my $filePath = ((@ARGV[2]=~/\/$/))?@ARGV[2]:"@ARGV[2]/";
-        my $originalFileName = basename(@ARGV[0]);
-        $originalFileName =~ s/(\.1)*\.tar//g;
+        my $originalFileName = basename(@ARGV[0],(".1.tar",".tar"));
         $subFolder = $filePath.$originalFileName;
         mkdir( $subFolder ) or print "Can't create $subFolder folder, $!\n";
         $fileName = $filePath.$originalFileName."/".$volueDescription.".tar";
