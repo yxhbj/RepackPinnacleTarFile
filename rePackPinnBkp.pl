@@ -4,7 +4,7 @@ use File::Basename;
 
 my $compressStatus = `sh ./readInstitution.sh @ARGV[0] $dir`;
 # print "Compress Status:$compressStatus\n";
-if($compressStatus gt 2){
+if($compressStatus > 2){
     exit;
 }
 # my $inst=`cat /usr/local/adacnew/Patients/Institution_0/Institution`;
